@@ -20,7 +20,7 @@ if (!is_null($events['events'])) {
 				$url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
 				$messages = [
 				'type' => 'sticker',
-				'packageId' => '1'
+				'packageId' => '1',
 				'stickerId' => '1'
 			];
 			}else{
