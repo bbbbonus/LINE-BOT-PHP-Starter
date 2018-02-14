@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 			
 			if($text == 'video'){
-				$test = "วิดีโอ";
+				$test = 'วิดีโอ';
 			}
 
 			// Build message to reply back
