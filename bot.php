@@ -54,5 +54,7 @@ if (!is_null($events['events'])) {
 			echo $result . "\r\n";
 		}
 	}
+}else{
+	echo "NOT EVENT";
 }
 echo "OK";
