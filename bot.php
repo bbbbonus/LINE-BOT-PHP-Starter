@@ -11,6 +11,8 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
+			//Get User ID
+			$userid = $event['source']['userId'];
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
@@ -26,7 +28,7 @@ if (!is_null($events['events'])) {
 			}else{
 				$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $text+$userid
 			];
 			}
 
@@ -55,6 +57,13 @@ if (!is_null($events['events'])) {
 		}
 	}
 }else{
+	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
+
+	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+	$response = $bot->pushMessage('<to>', $textMessageBuilder);
+
+	echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 	echo "NOT EVENT";
 }
 echo "OK";
