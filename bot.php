@@ -58,28 +58,28 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			if($text == 'image'){
-				$url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
-				$messages = [
-				'type' => 'image',
-				'originalContentUrl' => $url,
-				'previewImageUrl' => $url
-			];
-			}
-			if($text == 'video'){
-				$url = 'https://shrouded-harbor-88523.herokuapp.com/web_lpr.mp4';
-				$url2 = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
-				$messages = [
-				'type' => 'video',
-				'originalContentUrl' => $url,
-				'previewImageUrl' => $url2
-			];
-			}else{
+			// if($text == 'image'){
+			// 	$url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
+			// 	$messages = [
+			// 	'type' => 'image',
+			// 	'originalContentUrl' => $url,
+			// 	'previewImageUrl' => $url
+			// ];
+			// }
+			// if($text == 'video'){
+			// 	$url = 'https://shrouded-harbor-88523.herokuapp.com/web_lpr.mp4';
+			// 	$url2 = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
+			// 	$messages = [
+			// 	'type' => 'video',
+			// 	'originalContentUrl' => $url,
+			// 	'previewImageUrl' => $url2
+			// ];
+			// }else{
 				$messages = [
 				'type' => 'text',
 				'text' => $text
 			];
-			}
+			// }
 
 			// Build message to reply back
 			
