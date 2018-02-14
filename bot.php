@@ -17,7 +17,9 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$test = 'สวัสดีครับ พวกเรา EON ครับ';
+			if(strcmp($test,"Video")){
+				$test = 'วิดีโอ';
+			}
 			$messages = [
 				'type' => 'text',
 				'text' => $test
