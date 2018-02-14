@@ -9,6 +9,13 @@ $events = json_decode($content, true);
 if (!is_null($events['events'])) {
 	// Loop through each event
 	foreach ($events['events'] as $event) {
+		if($event['type'] == 'follow'){
+			$userid = $event['source']['userId'];
+			$file = 'test.txt';
+			$current = file_get_contents($file);
+			$current .= $userid;
+			file_put_contents($file, $current);
+		}
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			//Get User ID
