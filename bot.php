@@ -65,8 +65,7 @@ if (!is_null($events['events'])) {
 				'originalContentUrl' => $url,
 				'previewImageUrl' => $url
 			];
-			}
-			if($text == 'video'){
+			}else if($text == 'video'){
 				$url = 'https://shrouded-harbor-88523.herokuapp.com/web_lpr.mp4';
 				$url2 = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
 				$messages = [
