@@ -65,7 +65,8 @@ if (!is_null($events['events'])) {
 				'originalContentUrl' => $url,
 				'previewImageUrl' => $url
 			];
-			}else if($text == 'video'){
+			}
+			if($text == 'video'){
 				$url = 'https://shrouded-harbor-88523.herokuapp.com/web_lpr.mp4';
 				$url2 = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
 				$messages = [
@@ -105,13 +106,8 @@ if (!is_null($events['events'])) {
 		}
 	}
 }else{
-	$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-	$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => '<channel secret>']);
 
-	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
-	$response = $bot->pushMessage('<to>', $textMessageBuilder);
-
-	echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 	echo "NOT EVENT";
+
 }
 echo "OK";
