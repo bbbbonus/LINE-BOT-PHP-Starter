@@ -67,10 +67,11 @@ if (!is_null($events['events'])) {
 			];
 			}else if($text == 'video'){
 				$url = 'https://shrouded-harbor-88523.herokuapp.com/web_lpr.mp4';
+				$url2 = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
 				$messages = [
 				'type' => 'video',
 				'originalContentUrl' => $url,
-				'previewImageUrl' => $url
+				'previewImageUrl' => $url2
 			];
 			}else{
 				$messages = [
