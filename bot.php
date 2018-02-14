@@ -1,6 +1,6 @@
 <?php
 $access_token = 'aPRL1nzy4bv5J+iuL4vXXwnH352+hRAf/uXBHSrbrvsYklUaPpk1tIiqylteTDqKIfQOtEF9fCT7e0fUEv+8tnrM73mzSoG45ScIfNpRASEn2c0YeMGz4SeqYOECkxBkxKmbQiwsoXLJqYeekPvTowdB04t89/1O/w1cDnyilFU=';
-
+$chanel_secret = ''
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -11,6 +11,16 @@ if (!is_null($events['events'])) {
 	foreach ($events['events'] as $event) {
 		if($event['type'] == 'follow' && $event['source']['type'] == 'user'){
 			$userid = $event['source']['userId'];
+			
+			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
+			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $chanel_secret]);
+			$response = $bot->getProfile($userid);
+			if ($response->isSucceeded()) {
+    			$profile = $response->getJSONDecodedBody();
+    			echo $profile['displayName'];
+   			echo $profile['pictureUrl'];
+    			echo $profile['statusMessage'];
+			}
 			$replyToken = $event['replyToken'];
 			$str = 'Welcome to EON Solution';
 			
@@ -52,6 +62,13 @@ if (!is_null($events['events'])) {
 				$url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
 				$messages = [
 				'type' => 'image',
+				'originalContentUrl' => $url,
+				'previewImageUrl' => $url
+			];
+			}else if($text == 'video'){
+				$url = 'https://shrouded-harbor-88523.herokuapp.com/web_lpr.mp4';
+				$messages = [
+				'type' => 'video',
 				'originalContentUrl' => $url,
 				'previewImageUrl' => $url
 			];
