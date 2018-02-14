@@ -16,15 +16,22 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			$replyToken = $event['replyToken'];
 			
-			if($text == 'video'){
-				$text = 'วิดีโอ';
-			}
-
-			// Build message to reply back
-			$messages = [
+			if($text == 'image'){
+				$url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';
+				$messages = [
+				'type' => 'image',
+				'originalContentUrl' => $url
+				'previewImageUrl' => $url
+			];
+			}else{
+				$messages = [
 				'type' => 'text',
 				'text' => $text
 			];
+			}
+
+			// Build message to reply back
+			
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
