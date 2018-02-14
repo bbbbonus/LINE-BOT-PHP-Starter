@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if(strcmp($test,"Video")){
+			if($test == 'video'){
 				$test = 'วิดีโอ';
 			}
 			$messages = [
