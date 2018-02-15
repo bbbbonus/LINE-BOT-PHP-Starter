@@ -22,11 +22,11 @@ if (!is_null($events['events'])) {
     			echo $profile['statusMessage'];
 			}
 			$replyToken = $event['replyToken'];
-			$str = 'Welcome to EON Solution '+$profile['displayName'];
-			
+			$str = 'Welcome to EON Solution ';
+			$name = $profile['displayName'];
 			$messages = [
 				'type' => 'text',
-				'text' => $str
+				'text' => $str+$name
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/push';
