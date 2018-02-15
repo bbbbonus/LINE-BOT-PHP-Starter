@@ -12,21 +12,25 @@ if (!is_null($events['events'])) {
 		if($event['type'] == 'follow' && $event['source']['type'] == 'user'){
 			$userid = $event['source']['userId'];
 			
-			$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($access_token);
-			$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $chanel_secret]);
-			$response = $bot->getProfile($userid);
-			if ($response->isSucceeded()) {
-    			$profile = $response->getJSONDecodedBody();
-    			echo $profile['displayName'];
-   			echo $profile['pictureUrl'];
-    			echo $profile['statusMessage'];
-			}
+			//// get data
+			$url = 'https://api.line.me/v2/bot/profile/'.$userid;
+			$headers = array('Authorization: Bearer ' . $access_token);
+
+			$ch = curl_init($url);
+			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+			$result = curl_exec($ch);
+			curl_close($ch);
+			
+			$result_re = $result['displayName'];
+			
 			$replyToken = $event['replyToken'];
 			$str = 'Welcome to EON Solution ';
-			$name = $profile['displayName'];
 			$messages = [
 				'type' => 'text',
-				'text' => $name
+				'text' => $result_re
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/push';
