@@ -27,10 +27,10 @@ if (!is_null($events['events'])) {
 			$result_re = json_decode($result,true);
 			
 			$replyToken = $event['replyToken'];
-			$str = 'Welcome to EON Solution ';
+			$str = 'Welcome to EON Solution '.$result_re['displayName'];
 			$messages = [
 				'type' => 'text',
-				'text' => $result_re['displayName']
+				'text' => $str
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/push';
