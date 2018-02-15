@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
 			$str = 'Welcome to EON Solution ';
 			$messages = [
 				'type' => 'text',
-				'text' => $result_re['displayName'];
+				'text' => $result_re;
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/push';
