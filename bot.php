@@ -77,6 +77,11 @@ if (!is_null($events['events'])) {
 				'originalContentUrl' => $url,
 				'previewImageUrl' => $url
 			];
+			}else if($text == 'userid'){
+				$messages = [
+				'type' => 'text',
+				'text' => $userid
+			];
 			}else{
 				$messages = [
 				'type' => 'text',
