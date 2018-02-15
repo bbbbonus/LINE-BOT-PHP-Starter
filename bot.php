@@ -1,6 +1,6 @@
 <?php
 $access_token = 'aPRL1nzy4bv5J+iuL4vXXwnH352+hRAf/uXBHSrbrvsYklUaPpk1tIiqylteTDqKIfQOtEF9fCT7e0fUEv+8tnrM73mzSoG45ScIfNpRASEn2c0YeMGz4SeqYOECkxBkxKmbQiwsoXLJqYeekPvTowdB04t89/1O/w1cDnyilFU=';
-$chanel_secret = '';
+$chanel_secret = '185c063487124d07c972c87bd8a5278b';
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
