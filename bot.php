@@ -24,7 +24,7 @@ if (!is_null($events['events'])) {
 			$result = curl_exec($ch);
 			curl_close($ch);
 			
-			$result_re = json_decode($result,true);
+// 			$result_re = json_decode($result,true);
 			
 			$replyToken = $event['replyToken'];
 			$str = 'Welcome to EON Solution ';
