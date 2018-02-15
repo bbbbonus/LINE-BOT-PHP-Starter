@@ -26,7 +26,7 @@ if (!is_null($events['events'])) {
 			$name = $profile['displayName'];
 			$messages = [
 				'type' => 'text',
-				'text' => $str+$name
+				'text' => $name
 			];
 			
 			$url = 'https://api.line.me/v2/bot/message/push';
