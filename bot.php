@@ -22,7 +22,7 @@ if (!is_null($events['events'])) {
     			echo $profile['statusMessage'];
 			}
 			$replyToken = $event['replyToken'];
-			$str = 'Welcome to EON Solution';
+			$str = 'Welcome to EON Solution '+$profile['displayName'];
 			
 			$messages = [
 				'type' => 'text',
