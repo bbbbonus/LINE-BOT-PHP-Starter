@@ -27,7 +27,7 @@ if (!is_null($events['events'])) {
 			$result_re = json_decode($result,true);
 			
 			$replyToken = $event['replyToken'];
-			$str = 'Welcome to EON Solution '.$result_re['displayName'];
+			$str = 'Welcome to EON Solution คุณ '.$result_re['displayName'];
 			$messages = [
 				'type' => 'text',
 				'text' => $str
