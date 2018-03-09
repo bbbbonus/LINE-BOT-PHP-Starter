@@ -4,8 +4,8 @@ $line_api = 'https://notify-api.line.me/api/notify';
 $access_token = '8flA6wnyLo1bd2tUTgjBlBLE1MlNpl7SRpYKcjjdNWh';
 
 $str = 'ทดสอบข้อความ';    //ข้อความที่ต้องการส่ง สูงสุด 1000 ตัวอักษร
-$image_thumbnail_url = '8flA6wnyLo1bd2tUTgjBlBLE1MlNpl7SRpYKcjjdNWh';  // ขนาดสูงสุด 240×240px JPEG
-$image_fullsize_url = '';  // ขนาดสูงสุด 1024×1024px JPEG
+$image_thumbnail_url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';  // ขนาดสูงสุด 240×240px JPEG
+$image_fullsize_url = 'https://shrouded-harbor-88523.herokuapp.com/download.png';  // ขนาดสูงสุด 1024×1024px JPEG
 $sticker_package_id = 1;  // Package ID ของสติกเกอร์
 $sticker_id = 410;    // ID ของสติกเกอร์
 
